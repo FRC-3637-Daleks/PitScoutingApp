@@ -1,2 +1,2 @@
 # ScoutingAppClient
-Client for 3637 Scouting Application for teams to sync team scouting data with server
+An Android app that will run on the two tables used for pit scouting.
