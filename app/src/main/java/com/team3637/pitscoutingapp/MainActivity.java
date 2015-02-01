@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +14,9 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Spinner wheelNumber = (Spinner) findViewById(R.id.wheelNumber);
+        ArrayAdapter <CharSequence> wheelAdapter = ArrayAdapter.createFromResource(this, R.array.wheelNumbers, R.layout.support_simple_spinner_dropdown_item);
+        wheelNumber.setAdapter(wheelAdapter);
     }
 
 
