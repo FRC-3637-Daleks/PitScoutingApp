@@ -18,7 +18,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+//incomplete
 public class CameraActivity extends ActionBarActivity {
 
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
