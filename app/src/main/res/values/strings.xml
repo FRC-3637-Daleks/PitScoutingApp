@@ -17,5 +17,9 @@
     </string-array>
 
     <string name="title_activity_camera">CameraActivity</string>
+    <string name="submitButton">Submit</string>
+    <string name="deleteButton">Delete</string>
+    <string name="number">Robot Number...</string>
+    <string name="name">Robot Name...</string>
 
 </resources>

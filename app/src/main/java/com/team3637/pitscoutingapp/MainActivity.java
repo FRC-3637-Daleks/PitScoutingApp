@@ -1,44 +1,79 @@
 package com.team3637.pitscoutingapp;
 
+import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.List;
+import java.util.Random;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ListActivity {
+    private RobotsDataSource datasource;
+
+    private EditText number;
+    private EditText name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Spinner wheelNumber = (Spinner) findViewById(R.id.wheelNumber);
-        ArrayAdapter <CharSequence> wheelAdapter = ArrayAdapter.createFromResource(this, R.array.wheelNumbers, R.layout.support_simple_spinner_dropdown_item);
-        wheelNumber.setAdapter(wheelAdapter);
+
+        number = (EditText) findViewById(R.id.robotNumber);
+        name = (EditText) findViewById(R.id.robotName);
+
+
+        datasource = new RobotsDataSource(this);
+        datasource.open();
+
+        List<Robot> values = datasource.getAllComments();
+
+        // use the SimpleCursorAdapter to show the
+        // elements in a ListView
+        ArrayAdapter<Robot> adapter = new ArrayAdapter<Robot>(this,
+                android.R.layout.simple_list_item_1, values);
+        setListAdapter(adapter);
     }
 
+    public void onClick(View view) {
+        @SuppressWarnings("unchecked")
+        ArrayAdapter<Robot> adapter = (ArrayAdapter<Robot>) getListAdapter();
+        Robot robot = null;
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        switch (view.getId()) {
+            case R.id.add:
+                robot = datasource.createRobot(number.getText().toString(), name.getText().toString());
+                adapter.add(robot);
+                break;
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.delete:
+                if (getListAdapter().getCount() > 0) {
+                    robot = (Robot) getListAdapter().getItem(0);
+                    datasource.deleteRobot(robot);
+                    adapter.remove(robot);
+                }
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
+        adapter.notifyDataSetChanged();
     }
+
+    @Override
+    protected void onResume() {
+        datasource.open();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        datasource.close();
+        super.onPause();
+    }
+
 }
