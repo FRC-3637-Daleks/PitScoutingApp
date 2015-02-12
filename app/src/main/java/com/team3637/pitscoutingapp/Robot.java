@@ -1,8 +1,5 @@
 package com.team3637.pitscoutingapp;
 
-/**
- * Created by Ben Goldberg on 2/6/2015.
- */
 public class Robot {
     private long id;
     private String number;
