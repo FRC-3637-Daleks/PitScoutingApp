@@ -15,7 +15,17 @@ public class RobotsDataSource {
     private MySQLiteHelper dbHelper;
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_NUMBER,
-            MySQLiteHelper.COLUMN_NAME};
+            MySQLiteHelper.COLUMN_NAME,
+            MySQLiteHelper.COLUMN_WHEEL_NUM,
+            MySQLiteHelper.COLUMN_WHEEL_TYPE,
+            MySQLiteHelper.COLUMN_DRIVE_MOTOR,
+            MySQLiteHelper.COLUMN_LIFT,
+            MySQLiteHelper.COLUMN_MAX_STACK,
+            MySQLiteHelper.COLUMN_STACK_CAN,
+            MySQLiteHelper.COLUMN_STACK_SPEED,
+            MySQLiteHelper.COLUMN_GRABBER,
+            MySQLiteHelper.COLUMN_STACK_METHOD,
+            MySQLiteHelper.COLUMN_COMMENT};
 
     public RobotsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
