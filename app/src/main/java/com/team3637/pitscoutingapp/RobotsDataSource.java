@@ -9,9 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Zethra on 2/6/2015.
- */
 public class RobotsDataSource {
 
     private SQLiteDatabase database;
@@ -32,10 +29,20 @@ public class RobotsDataSource {
         dbHelper.close();
     }
 
-    public Robot createRobot(String number, String name) {
+    public Robot createRobot(String number, String name, String wheelNum, String wheelType, String driveMotor, String lift, String maxStack, String stackCan, String stackSpeed, String grabber, String stackMethod, String comment) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_NUMBER, number);
         values.put(MySQLiteHelper.COLUMN_NAME, name);
+        values.put(MySQLiteHelper.COLUMN_WHEEL_NUM, wheelNum);
+        values.put(MySQLiteHelper.COLUMN_WHEEL_TYPE, wheelType);
+        values.put(MySQLiteHelper.COLUMN_DRIVE_MOTOR, driveMotor);
+        values.put(MySQLiteHelper.COLUMN_LIFT, lift);
+        values.put(MySQLiteHelper.COLUMN_MAX_STACK, maxStack);
+        values.put(MySQLiteHelper.COLUMN_STACK_CAN, stackCan);
+        values.put(MySQLiteHelper.COLUMN_STACK_SPEED, stackSpeed);
+        values.put(MySQLiteHelper.COLUMN_GRABBER, grabber);
+        values.put(MySQLiteHelper.COLUMN_STACK_METHOD, stackMethod);
+        values.put(MySQLiteHelper.COLUMN_COMMENT, comment);
         long insertId = database.insert(MySQLiteHelper.TABLE_ROBOTS, null,
                 values);
         Cursor cursor = database.query(MySQLiteHelper.TABLE_ROBOTS,
@@ -73,9 +80,21 @@ public class RobotsDataSource {
 
     private Robot cursorToRobot(Cursor cursor) {
         Robot robot = new Robot();
-        robot.setId(cursor.getLong(0));
-        robot.setNumber(cursor.getString(1));
-        robot.setName(cursor.getString(2));
+        if(cursor.moveToFirst()) {
+            robot.setId(cursor.getLong(0));
+            robot.setNumber(cursor.getString(1));
+            robot.setName(cursor.getString(2));
+            robot.setWheelNum(cursor.getString(3));
+            robot.setWheelType(cursor.getString(4));
+            robot.setDriveMotor(cursor.getString(5));
+            robot.setLift(cursor.getString(6));
+            robot.setMaxStack(cursor.getString(7));
+            robot.setStackCan(cursor.getString(8));
+            robot.setStackSpeed(cursor.getString(9));
+            robot.setGrabber(cursor.getString(10));
+            robot.setStackMethod(cursor.getString(11));
+            robot.setComment(cursor.getString(12));
+        }
         return robot;
     }
 }

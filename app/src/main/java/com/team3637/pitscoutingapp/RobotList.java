@@ -42,8 +42,8 @@ public class RobotList extends ListActivity {
 
         switch (view.getId()) {
             case R.id.add:
-                robot = datasource.createRobot(number.getText().toString(), name.getText().toString());
-                adapter.add(robot);
+                //robot = datasource.createRobot(number.getText().toString(), name.getText().toString());
+                //adapter.add(robot);
                 break;
 
             case R.id.delete:

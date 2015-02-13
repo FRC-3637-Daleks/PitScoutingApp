@@ -6,24 +6,47 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 
 public class MainActivity extends ActionBarActivity {
+    private RobotsDataSource datasource;
+
+    private EditText number;
+    private EditText name;
+    private Spinner wheelNum;
+    private Spinner wheelType;
+    private Spinner driveMotor;
+    private Spinner lift;
+    private Spinner maxStack;
+    private CheckBox stackCan;
+    private Spinner stackSpeed;
+    private Spinner grabber;
+    private Spinner stackMethod;
+    private EditText comment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-/*        Spinner wheelNumber = (Spinner) findViewById(R.id.wheelNumber);
-        Spinner wheelType = (Spinner) findViewById(R.id.wheelType);
+        number = (EditText) findViewById(R.id.robotNumber);
+        name = (EditText) findViewById(R.id.robotName);
+        wheelNum = (Spinner) findViewById(R.id.wheelNumber);
+        wheelType = (Spinner) findViewById(R.id.wheelType);
+        driveMotor = (Spinner) findViewById(R.id.motorNumber);
+        lift = (Spinner) findViewById(R.id.liftAbility);
+        maxStack = (Spinner) findViewById(R.id.maxStack);
+        stackCan = (CheckBox) findViewById(R.id.maxStackCan);
+        stackSpeed = (Spinner) findViewById(R.id.stackSpeed);
+        grabber = (Spinner) findViewById(R.id.grabType);
+        stackMethod = (Spinner) findViewById(R.id.stackMethod);
+        comment = (EditText) findViewById(R.id.comment);
 
-        ArrayAdapter<CharSequence> wheelNumberAdapter = ArrayAdapter.createFromResource(this, R.array.wheelNumbers, R.layout.support_simple_spinner_dropdown_item);
-        ArrayAdapter<CharSequence> wheelTypeAdapter = ArrayAdapter.createFromResource(this, R.array.wheelType, R.layout.support_simple_spinner_dropdown_item);
-
-        wheelNumber.setAdapter(wheelNumberAdapter);
-        wheelType.setAdapter(wheelTypeAdapter);*/
+        datasource = new RobotsDataSource(this);
+        datasource.open();
     }
 
 
@@ -51,6 +74,16 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void submit(View view) {
+        Robot robot = null;
+        String can;
+        if (stackCan.isChecked())
+            can = "Yes";
+        else
+            can = "No";
+        robot = datasource.createRobot(number.getText().toString(), name.getText().toString(), wheelNum.getSelectedItem().toString(), wheelType.getSelectedItem().toString(), driveMotor.getSelectedItem().toString(), lift.getSelectedItem().toString(), maxStack.getSelectedItem().toString(), can, stackSpeed.getSelectedItem().toString(), grabber.getSelectedItem().toString(), stackMethod.getSelectedItem().toString(), comment.getText().toString());
     }
 
     public void openList() {

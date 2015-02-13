@@ -184,7 +184,7 @@
 
 
 
-            <EditText
+            <EditText android:id="@+id/comment"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="false"
@@ -206,7 +206,8 @@
                 <Button android:id="@+id/submit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/submitButton"/>
+                    android:text="@string/submitButton"
+                    android:onClick="submit"/>
 
             </LinearLayout>
         </RelativeLayout>
