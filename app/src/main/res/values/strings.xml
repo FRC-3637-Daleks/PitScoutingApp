@@ -81,6 +81,7 @@
     <string name="listButton">Show Robot List</string>
     <string name="action_list">Robot List</string>
     <string name="commentLabel">Comments</string>
+    <string name="action_export">Export Database</string>
 
 
     <color name="lightGrey">#F8F8F8</color>

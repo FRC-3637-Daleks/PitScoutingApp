@@ -2,6 +2,7 @@ package com.team3637.pitscoutingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,6 +10,15 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.opencsv.CSVWriter;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Field;
+
+import java.lang.reflect.Field;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -71,6 +81,9 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_list:
                 openList();
                 return true;
+            case R.id.action_export:
+                exportDB();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -94,6 +107,33 @@ public class MainActivity extends ActionBarActivity {
     public void viewList(View view) {
         Intent robotList = new Intent(this, RobotList.class);
         startActivity(robotList);
+    }
+
+    public void exportDB() {
+        List<Robot> robotsList = datasource.getAllComments();
+        String[][] data = new String[robotsList.size()][11];
+        for(int i = 0; i < robotsList.size(); i++) {
+            data[i][0] = robotsList.get(i).getNumber();
+            data[i][1] = robotsList.get(i).getName();
+            data[i][2] = robotsList.get(i).getWheelNum();
+            data[i][3] = robotsList.get(i).getWheelType();
+            data[i][4] = robotsList.get(i).getDriveMotor();
+            data[i][5] = robotsList.get(i).getMaxStack();
+            data[i][6] = robotsList.get(i).getStackCan();
+            data[i][7] = robotsList.get(i).getStackSpeed();
+            data[i][8] = robotsList.get(i).getGrabber();
+            data[i][9] = robotsList.get(i).getStackMethod();
+            data[i][10] = robotsList.get(i).getComment();
+        }
+        CSVWriter writer = null;
+        try {
+            writer = new CSVWriter(new FileWriter(Environment.getDataDirectory()));
+            for(int i = 0; i < robotsList.size(); i++) {
+                writer.writeNext(data[i]);
+            }
+            writer.close();
+        } catch (IOException e) {
+        }
     }
 
 }

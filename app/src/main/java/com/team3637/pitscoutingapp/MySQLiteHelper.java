@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import com.opencsv.CSVReader;
+
+import java.lang.reflect.Field;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_ROBOTS = "robots";
@@ -57,4 +60,5 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_ROBOTS);
         onCreate(db);
     }
+
 }
