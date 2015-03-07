@@ -3,8 +3,11 @@ package com.team3637.pitscoutingappb;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import java.util.List;
 
@@ -23,17 +26,19 @@ public class MainActivity extends ListActivity {
         number = (EditText) findViewById(R.id.robotNumber);
         name = (EditText) findViewById(R.id.robotName);
 
-
         datasource = new RobotsDataSource(this);
         datasource.open();
 
         List<Robot> values = datasource.getAllComments();
 
-        // use the SimpleCursorAdapter to show the
-        // elements in a ListView
         ArrayAdapter<Robot> adapter = new ArrayAdapter<Robot>(this,
                 android.R.layout.simple_list_item_1, values);
         setListAdapter(adapter);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+
     }
 
     public void onClick(View view) {
