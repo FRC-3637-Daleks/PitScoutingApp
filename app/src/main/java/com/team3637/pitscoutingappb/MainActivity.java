@@ -1,6 +1,7 @@
 package com.team3637.pitscoutingappb;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -14,6 +15,8 @@ import java.util.List;
 
 public class MainActivity extends ListActivity {
     private RobotsDataSource datasource;
+
+    private ArrayAdapter<Robot> adapter = (ArrayAdapter<Robot>) getListAdapter();
 
     private EditText number;
     private EditText name;
@@ -43,13 +46,13 @@ public class MainActivity extends ListActivity {
 
     public void onClick(View view) {
         @SuppressWarnings("unchecked")
-        ArrayAdapter<Robot> adapter = (ArrayAdapter<Robot>) getListAdapter();
         Robot robot = null;
 
         switch (view.getId()) {
             case R.id.add:
-                robot = datasource.createRobot(number.getText().toString(), name.getText().toString());
-                adapter.add(robot);
+                /*robot = datasource.createRobot(number.getText().toString(), name.getText().toString());
+                adapter.add(robot);*/
+                startActivityForResult(new Intent(this, DataEntryActivity.class), 1);
                 break;
 
             case R.id.delete:
@@ -64,7 +67,21 @@ public class MainActivity extends ListActivity {
                 datasource.writeCSV(datasource.exportSting());
                 break;
         }
-        adapter.notifyDataSetChanged();
+        //adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        System.out.println("1");
+        if (requestCode == 1) {
+            System.out.println("2");
+            adapter.add(DataEntryActivity.robot);
+            if (resultCode == RESULT_OK) {
+                System.out.println("3");
+
+            }
+        }
     }
 
     @Override

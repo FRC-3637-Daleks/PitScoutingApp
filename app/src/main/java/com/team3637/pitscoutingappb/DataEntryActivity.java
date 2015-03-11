@@ -1,17 +1,33 @@
 package com.team3637.pitscoutingappb;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class DataEntryActivity extends ActionBarActivity {
+
+    public static Robot robot = null;
+
+    private RobotsDataSource datasource;
+
+    private EditText number;
+    private EditText name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_entry);
+
+        number = (EditText) findViewById(R.id.robotNumber);
+        name = (EditText) findViewById(R.id.robotName);
+
+        datasource = new RobotsDataSource(this);
+        datasource.open();
     }
 
 
@@ -35,5 +51,10 @@ public class DataEntryActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void submit(View view) {
+        robot = datasource.createRobot(number.getText().toString(), name.getText().toString());
+        finish();
     }
 }
