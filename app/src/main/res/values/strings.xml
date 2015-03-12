@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PitScoutingApp</string>
+    <string name="app_name">Pit Scouting App</string>
+    <string name="title_activity_data_entry">Data Entry</string>
+    <string name="title_activity_robot_list">Robot List</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -16,13 +19,12 @@
         <item>8</item>
     </string-array>
 
-    <string name="title_activity_camera">CameraActivity</string>
     <string name="submitButton">Submit</string>
     <string name="deleteButton">Delete</string>
     <string name="number">Robot Number...</string>
     <string name="name">Robot Name...</string>
     <string name="export">Export</string>
-    <string name="title_activity_data_entry">dataEntry</string>
+
 
     <string name="motorNumberLabel">Number of Drive Motors</string>
     <string name="maxStackLabel">Max Stack</string>
@@ -102,5 +104,6 @@
 
     <color name="lightGrey">#F8F8F8</color>
     <color name="grey">#CCCCCC</color>
+    <string name="title_activity_main">MainActivity</string>
 
 </resources>

@@ -1,9 +1,12 @@
 package com.team3637.pitscoutingappb;
 
+import java.io.Serializable;
+
 /**
  * Created by Ben Goldberg on 2/6/2015.
  */
-public class Robot {
+public class Robot implements Serializable {
+    private static final long serialVersionUID = 9001L;
     private long id;
     private String number;
     private String name;

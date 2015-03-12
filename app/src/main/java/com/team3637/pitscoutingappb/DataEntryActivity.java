@@ -55,6 +55,11 @@ public class DataEntryActivity extends ActionBarActivity {
 
     public void submit(View view) {
         robot = datasource.createRobot(number.getText().toString(), name.getText().toString());
+        Intent result = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("ser", robot);
+        result.putExtras(bundle);
+        setResult(-1, result);
         finish();
     }
 }
