@@ -22,7 +22,25 @@ public class RobotsDataSource {
     private MySQLiteHelper dbHelper;
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_NUMBER,
-            MySQLiteHelper.COLUMN_NAME};
+            MySQLiteHelper.COLUMN_NAME
+/*            MySQLiteHelper.COLUMN_AUTOROBOT,
+            MySQLiteHelper.COLUMN_AUTOTOTE,
+            MySQLiteHelper.COLUMN_AUTOCAN,
+            MySQLiteHelper.COLUMN_STARTTL,
+            MySQLiteHelper.COLUMN_STARTTM,
+            MySQLiteHelper.COLUMN_STARTTR,
+            MySQLiteHelper.COLUMN_STARTLL,
+            MySQLiteHelper.COLUMN_STARTLM,
+            MySQLiteHelper.COLUMN_STARTLR,
+            MySQLiteHelper.COLUMN_STYLEHS,
+            MySQLiteHelper.COLUMN_STYLETOPPER,
+            MySQLiteHelper.COLUMN_STYLELITTERCAN,
+            MySQLiteHelper.COLUMN_STYLELANDFILL,
+            MySQLiteHelper.COLUMN_STYLETHROW,
+            MySQLiteHelper.COLUMN_STYLESINGLESTACK,
+            MySQLiteHelper.COLUMN_STYLEMAKEATONCE,
+            MySQLiteHelper.COLUMN_STYLECANFROMSTEP*/
+    };
 
     public RobotsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -77,9 +95,11 @@ public class RobotsDataSource {
 
     private Robot cursorToRobot(Cursor cursor) {
         Robot robot = new Robot();
-        robot.setId(cursor.getLong(0));
-        robot.setNumber(cursor.getString(1));
-        robot.setName(cursor.getString(2));
+        if (cursor.moveToFirst()) {
+            robot.setId(cursor.getLong(0));
+            robot.setNumber(cursor.getString(1));
+            robot.setName(cursor.getString(2));
+        }
         return robot;
     }
 
