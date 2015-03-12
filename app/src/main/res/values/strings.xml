@@ -8,6 +8,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="create_button">Enter a new robot</string>
+    <string name="list_button">Edit a Robot</string>
+    <string name="back_button">Back</string>
+
     <string-array name="wheelNumbers">
         <item>1</item>
         <item>2</item>
