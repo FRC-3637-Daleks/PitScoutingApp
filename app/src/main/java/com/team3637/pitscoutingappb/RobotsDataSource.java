@@ -39,8 +39,7 @@ public class RobotsDataSource {
             MySQLiteHelper.COLUMN_STYLETHROW,
             MySQLiteHelper.COLUMN_STYLESINGLESTACK,
             MySQLiteHelper.COLUMN_STYLEMAKEATONCE,
-            MySQLiteHelper.COLUMN_STYLECANFROMSTEP*/
-    };
+            MySQLiteHelper.COLUMN_STYLECANFROMSTEP*/};
 
     public RobotsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -95,7 +94,7 @@ public class RobotsDataSource {
 
     private Robot cursorToRobot(Cursor cursor) {
         Robot robot = new Robot();
-        if (cursor.moveToFirst()) {
+        if (cursor.getCount() > 0) {
             robot.setId(cursor.getLong(0));
             robot.setNumber(cursor.getString(1));
             robot.setName(cursor.getString(2));
