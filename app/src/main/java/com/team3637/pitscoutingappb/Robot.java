@@ -9,24 +9,24 @@ public class Robot {
     private long id;
     private String number;
     private String name;
-    private Boolean autoRobot;
-    private Boolean autoTote;
-    private Boolean autoCan;
-    private Boolean startTL;
-    private Boolean startTM;
-    private Boolean startTR;
-    private Boolean startLL;
-    private Boolean startLM;
-    private Boolean startLR;
-    private Boolean styleHS;
-    private Boolean styleTopper;
-    private Boolean styleLitterCan;
-    private Boolean styleLandfill;
-    private Boolean styleThrow;
-    private Boolean styleSingleStack;
-    private Boolean styleMakeAtOnce;
-    private Boolean styleCanFromStep;
-    private Boolean coopTote;
+    private String autoRobot;
+    private String autoTote;
+    private String autoCan;
+    private String startTL;
+    private String startTM;
+    private String startTR;
+    private String startLL;
+    private String startLM;
+    private String startLR;
+    private String styleHS;
+    private String styleTopper;
+    private String styleLitterCan;
+    private String styleLandfill;
+    private String styleThrow;
+    private String styleSingleStack;
+    private String styleMakeAtOnce;
+    private String styleCanFromStep;
+    private String coopTote;
     private Integer coopStep;
     private String comment;
 
@@ -54,147 +54,147 @@ public class Robot {
         this.name = name;
     }
 
-    public Boolean getAutoRobot() {
+    public String getAutoRobot() {
         return autoRobot;
     }
 
-    public void setAutoRobot(Boolean autoRobot) {
+    public void setAutoRobot(String autoRobot) {
         this.autoRobot = autoRobot;
     }
 
-    public Boolean getAutoTote() {
+    public String getAutoTote() {
         return autoTote;
     }
 
-    public void setAutoTote(Boolean autoTote) {
+    public void setAutoTote(String autoTote) {
         this.autoTote = autoTote;
     }
 
-    public Boolean getAutoCan() {
+    public String getAutoCan() {
         return autoCan;
     }
 
-    public void setAutoCan(Boolean autoCan) {
+    public void setAutoCan(String autoCan) {
         this.autoCan = autoCan;
     }
 
-    public Boolean getStartTL() {
+    public String getStartTL() {
         return startTL;
     }
 
-    public void setStartTL(Boolean startTL) {
+    public void setStartTL(String startTL) {
         this.startTL = startTL;
     }
 
-    public Boolean getStartTM() {
+    public String getStartTM() {
         return startTM;
     }
 
-    public void setStartTM(Boolean startTM) {
+    public void setStartTM(String startTM) {
         this.startTM = startTM;
     }
 
-    public Boolean getStartTR() {
+    public String getStartTR() {
         return startTR;
     }
 
-    public void setStartTR(Boolean startTR) {
+    public void setStartTR(String startTR) {
         this.startTR = startTR;
     }
 
-    public Boolean getStartLL() {
+    public String getStartLL() {
         return startLL;
     }
 
-    public void setStartLL(Boolean startLL) {
+    public void setStartLL(String startLL) {
         this.startLL = startLL;
     }
 
-    public Boolean getStartLM() {
+    public String getStartLM() {
         return startLM;
     }
 
-    public void setStartLM(Boolean startLM) {
+    public void setStartLM(String startLM) {
         this.startLM = startLM;
     }
 
-    public Boolean getStartLR() {
+    public String getStartLR() {
         return startLR;
     }
 
-    public void setStartLR(Boolean startLR) {
+    public void setStartLR(String startLR) {
         this.startLR = startLR;
     }
 
-    public Boolean getStyleHS() {
+    public String getStyleHS() {
         return styleHS;
     }
 
-    public void setStyleHS(Boolean styleHS) {
+    public void setStyleHS(String styleHS) {
         this.styleHS = styleHS;
     }
 
-    public Boolean getStyleTopper() {
+    public String getStyleTopper() {
         return styleTopper;
     }
 
-    public void setStyleTopper(Boolean styleTopper) {
+    public void setStyleTopper(String styleTopper) {
         this.styleTopper = styleTopper;
     }
 
-    public Boolean getStyleLitterCan() {
+    public String getStyleLitterCan() {
         return styleLitterCan;
     }
 
-    public void setStyleLitterCan(Boolean styleLitterCan) {
+    public void setStyleLitterCan(String styleLitterCan) {
         this.styleLitterCan = styleLitterCan;
     }
 
-    public Boolean getStyleLandfill() {
+    public String getStyleLandfill() {
         return styleLandfill;
     }
 
-    public void setStyleLandfill(Boolean styleLandfill) {
+    public void setStyleLandfill(String styleLandfill) {
         this.styleLandfill = styleLandfill;
     }
 
-    public Boolean getStyleThrow() {
+    public String getStyleThrow() {
         return styleThrow;
     }
 
-    public void setStyleThrow(Boolean styleThrow) {
+    public void setStyleThrow(String styleThrow) {
         this.styleThrow = styleThrow;
     }
 
-    public Boolean getStyleSingleStack() {
+    public String getStyleSingleStack() {
         return styleSingleStack;
     }
 
-    public void setStyleSingleStack(Boolean styleSingleStack) {
+    public void setStyleSingleStack(String styleSingleStack) {
         this.styleSingleStack = styleSingleStack;
     }
 
-    public Boolean getStyleMakeAtOnce() {
+    public String getStyleMakeAtOnce() {
         return styleMakeAtOnce;
     }
 
-    public void setStyleMakeAtOnce(Boolean styleMakeAtOnce) {
+    public void setStyleMakeAtOnce(String styleMakeAtOnce) {
         this.styleMakeAtOnce = styleMakeAtOnce;
     }
 
-    public Boolean getStyleCanFromStep() {
+    public String getStyleCanFromStep() {
         return styleCanFromStep;
     }
 
-    public void setStyleCanFromStep(Boolean styleCanFromStep) {
+    public void setStyleCanFromStep(String styleCanFromStep) {
         this.styleCanFromStep = styleCanFromStep;
     }
 
-    public Boolean getCoopTote() {
+    public String getCoopTote() {
         return coopTote;
     }
 
-    public void setCoopTote(Boolean coopTote) {
+    public void setCoopTote(String coopTote) {
         this.coopTote = coopTote;
     }
 

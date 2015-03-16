@@ -9,12 +9,16 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.team3637.pitscoutingappb.R;
 
-public class DataEntryActivity extends ActionBarActivity {
+import java.util.List;
+
+public class EditDataActivity extends ActionBarActivity {
 
     public static Robot robot = null;
 
     private RobotsDataSource datasource;
+    private List<Robot> values = null;
 
     private EditText number;
     private EditText name;
@@ -24,7 +28,10 @@ public class DataEntryActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_entry);
+        setContentView(R.layout.activity_edit_data);
+
+        Intent intent = getIntent();
+
 
         number = (EditText) findViewById(R.id.robotNumber);
         name = (EditText) findViewById(R.id.robotName);
@@ -33,12 +40,25 @@ public class DataEntryActivity extends ActionBarActivity {
 
         datasource = new RobotsDataSource(this);
         datasource.open();
+
+        values = datasource.getAllComments();
+
+        System.out.println(intent.getExtras().getBoolean("autoTote"));
+
+        if (intent.hasExtra("pos")) {
+            robot = values.get(intent.getExtras().getInt("pos"));
+        }
+
+        number.setText(robot.getNumber());
+        name.setText(robot.getName());
+        autoRobot.setChecked(check(robot.getAutoRobot()));
+        autoTote.setChecked(check(robot.getAutoTote()));
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_data_entry, menu);
+        getMenuInflater().inflate(R.menu.menu_edit_data, menu);
         return true;
     }
 
@@ -61,11 +81,18 @@ public class DataEntryActivity extends ActionBarActivity {
     }
 
     public void submit(View view) {
-        robot = datasource.createRobot(number.getText().toString(),
+        robot = datasource.editRobot(robot.getId(), number.getText().toString(),
                 name.getText().toString(),
                 check(autoRobot.isChecked()),
                 check(autoTote.isChecked()));
-        System.out.println(robot.getAutoRobot());
         finish();
+    }
+
+    private boolean check(String val) {
+        if (val != null) {
+            if (val.equals("Yes"))
+                return true;
+        }
+        return false;
     }
 }

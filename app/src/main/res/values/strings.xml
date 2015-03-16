@@ -5,23 +5,12 @@
     <string name="title_activity_data_entry">Data Entry</string>
     <string name="title_activity_robot_list">Robot List</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
     <string name="create_button">Enter a new robot</string>
     <string name="list_button">Edit a Robot</string>
     <string name="back_button">Back</string>
 
-    <string-array name="wheelNumbers">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-    </string-array>
 
     <string name="submitButton">Submit</string>
     <string name="deleteButton">Delete</string>
@@ -29,79 +18,15 @@
     <string name="name">Robot Name...</string>
     <string name="export">Export</string>
 
-
-    <string name="motorNumberLabel">Number of Drive Motors</string>
-    <string name="maxStackLabel">Max Stack</string>
-    <string name="maxStackCanLabel">Can</string>
-    <string-array name="oneThoughtEight">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-    </string-array>
-
-    <string name="wheelLabel">Number of Wheels</string>
-    <string-array name="oneThoughtEightAndTank">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>Tank Drive</item>
-    </string-array>
-
-    <string name="stackingSpeedLabel">Stacking Speed</string>
-    <string-array name="oneThoughtFive">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
-    <string name="stackingMethodLabel">Stacking Method</string>
-    <string-array name="stackingMethod">
-        <item>Bottom</item>
-        <item>Top</item>
-        <item>One Only</item>
-    </string-array>
-
-    <string name="grabTypeLabel">Grabbing Mechanism</string>
-    <string-array name="grabType">
-        <item>Hook</item>
-        <item>Fork Lift</item>
-        <item>Claw</item>
-    </string-array>
-
-    <string name="wheelTypeLabel">Wheel Type</string>
-    <string-array name="wheelTypes">
-        <item>Traction Wheels</item>
-        <item>Mecanum Wheels</item>
-        <item>Omni Wheels</item>
-        <item>Tank Treads</item>
-    </string-array>
-
-    <string name="liftAbilityLabel">Lift Ability</string>
-    <string-array name="liftAbilities">
-        <item>none</item>
-        <item>tote</item>
-        <item>can</item>
-        <item>tote + can</item>
-        <item>can + litter</item>
-        <item>tote + can + litter</item>
-    </string-array>
-
-    <string name="title_activity_list">list</string>
-    <string name="title_activity_test">test</string>
-    <string name="listButton">Show Robot List</string>
-    <string name="action_list">Robot List</string>
+    <string name="autoRobot">Robot Move in Auton</string>
+    <string name="autoTote">Robot Moves Tote Auton</string>
+    <string name="autoCan">Robot Moves Can Auton</string>
+    <string name="startTL">Robot Starts by Left Auton Tote</string>
+    <string name="startTM">Robot Starts by Middle Auton Tote</string>
+    <string name="startTR">Robot Starts by Right Auton Tote</string>
+    <string name="startLL">Robot Starts by Left Side of Landfill</string>
+    <string name="startLM">Robot Starts by Middle of Landfill</string>
+    <string name="startLR">Robot Starts by Right Side of Landfill</string>
     <string name="commentLabel">Comments</string>
     <string name="action_export">Export Database</string>
 
@@ -109,5 +34,8 @@
     <color name="lightGrey">#F8F8F8</color>
     <color name="grey">#CCCCCC</color>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_edit_data">EditDataActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>
