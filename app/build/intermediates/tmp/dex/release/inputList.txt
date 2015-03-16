@@ -1,0 +1,6 @@
+C:\Users\Zethra\AndroidStudioProjects\PitScoutingApp\app\build\intermediates\classes\release
+C:\Users\Zethra\AndroidStudioProjects\PitScoutingApp\app\build\intermediates\pre-dexed\release\support-annotations-21.0.3-3d63339469fb90e9c4aeb0254099f6078d1cf435.jar
+C:\Users\Zethra\AndroidStudioProjects\PitScoutingApp\app\build\intermediates\pre-dexed\release\opencsv-3.2-e8d74d1d263e273159a5576fe59d0ee74497d8e4.jar
+C:\Users\Zethra\AndroidStudioProjects\PitScoutingApp\app\build\intermediates\pre-dexed\release\internal_impl-21.0.3-ae54f61191ee91d3da2a1707c0c6a8ba40c92da0.jar
+C:\Users\Zethra\AndroidStudioProjects\PitScoutingApp\app\build\intermediates\pre-dexed\release\classes-7969e0799457cec253f93409e979e53c3e35e856.jar
+C:\Users\Zethra\AndroidStudioProjects\PitScoutingApp\app\build\intermediates\pre-dexed\release\classes-ce4ae0916801f7c76780105e6f0df4aafbf11549.jar
