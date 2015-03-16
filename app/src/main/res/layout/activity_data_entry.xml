@@ -21,36 +21,106 @@
                 android:hint="@string/name"/>
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <CheckBox android:id="@+id/autoRobot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/autoRobot"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <CheckBox android:id="@+id/autoTote"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/autoTote"/>
 
-        </LinearLayout>
+            <CheckBox android:id="@+id/autoTote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/autoTote"/>
+
+            <CheckBox android:id="@+id/autoCan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/autoCan"/>
+
+            <CheckBox android:id="@+id/startTL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startTL"/>
+
+            <CheckBox android:id="@+id/startTM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startTM"/>
+
+            <CheckBox android:id="@+id/startTR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startTR"/>
+
+            <CheckBox android:id="@+id/startLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startLL"/>
+
+            <CheckBox android:id="@+id/startLM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startLM"/>
+
+            <CheckBox android:id="@+id/startLR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startLR"/>
+
+            <CheckBox android:id="@+id/styleHS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/styleHS"/>
+
+            <CheckBox android:id="@+id/styleTopper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/styleTopper"/>
+
+            <CheckBox android:id="@+id/styleLitterCan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/styleLitterCan"/>
+
+            <CheckBox android:id="@+id/styleLandfill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/styleLandfill"/>
+
+            <CheckBox android:id="@+id/styleThrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/styleThrow"/>
+
+            <CheckBox android:id="@+id/styleSingleStack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/styleSingleStack"/>
+
+            <CheckBox android:id="@+id/styleMakeAtOnce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/styleMakeAtOnce"/>
+
+            <CheckBox android:id="@+id/styleCanFromStep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/styleCanFromStep"/>
+
+            <CheckBox android:id="@+id/coopTote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/coopTote"/>
+
+            <EditText android:id="@+id/coopStep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/coopStep"/>
+
+        </TableLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +129,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/commentLabel"/>
+                android:text="@string/comment"/>
 
         </LinearLayout>
         <LinearLayout

@@ -14,10 +14,10 @@
 
     <string name="submitButton">Submit</string>
     <string name="deleteButton">Delete</string>
-    <string name="number">Robot Number...</string>
-    <string name="name">Robot Name...</string>
     <string name="export">Export</string>
 
+    <string name="number">Robot Number</string>
+    <string name="name">Robot Name</string>
     <string name="autoRobot">Robot Move in Auton</string>
     <string name="autoTote">Robot Moves Tote Auton</string>
     <string name="autoCan">Robot Moves Can Auton</string>
@@ -27,7 +27,17 @@
     <string name="startLL">Robot Starts by Left Side of Landfill</string>
     <string name="startLM">Robot Starts by Middle of Landfill</string>
     <string name="startLR">Robot Starts by Right Side of Landfill</string>
-    <string name="commentLabel">Comments</string>
+    <string name="styleHS">Robot Works Well at Human Station</string>
+    <string name="styleTopper">Robot Puts Can on Top of Stack</string>
+    <string name="styleLitterCan">Robot Put Litter in Can</string>
+    <string name="styleLandfill">Robot Works Well at Landfill</string>
+    <string name="styleThrow">Human Player Throws Litter</string>
+    <string name="styleSingleStack">Robot Makes Adds One or Two Totes to a Stack at a Time</string>
+    <string name="styleMakeAtOnce">Robot Makes Entire Stack in One Shot</string>
+    <string name="styleCanFromStep">Robot Takes Can From Step</string>
+    <string name="coopTote">Robot Put Yellow Tote on Step</string>
+    <string name="coopStep">Robot Puts This Many Yellow Totes on Step</string>
+    <string name="comment">Comments</string>
     <string name="action_export">Export Database</string>
 
 
